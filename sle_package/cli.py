@@ -14,6 +14,8 @@ from sle_package.utils.logger import logger_setup, global_logger_config
 # Get the directory of config.lua
 load_dotenv()
 config_dir = os.environ.get("CONFIG_DIR")
+if config_dir is None:
+    config_dir = os.path.expanduser("~/.config/srt")
 
 # Load the Lua runtime and modify the package path
 # lua = lupa.LuaRuntime()
