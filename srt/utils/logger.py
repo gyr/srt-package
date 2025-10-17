@@ -52,7 +52,7 @@ def global_logger_config(verbose: bool = False, log_file: bool = False) -> None:
 
     if log_file:
         # create file handler which logs even debug messages
-        file_handler = logging.FileHandler("/tmp/sle_tools.log")
+        file_handler = logging.FileHandler("/tmp/srt.log")
         # file_handler.setLevel(logging.DEBUG)
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)

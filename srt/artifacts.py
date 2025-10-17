@@ -9,8 +9,8 @@ except ImportError:
     LuaTable = Any  # Fallback if LuaTable cannot be imported
 
 
-from sle_package.utils.logger import logger_setup
-from sle_package.utils.tools import (
+from srt.utils.logger import logger_setup
+from srt.utils.tools import (
     run_command,
     run_command_and_stream_output,
     running_spinner_decorator,

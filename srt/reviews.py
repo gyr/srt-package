@@ -5,8 +5,8 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
 
-from sle_package.utils.logger import logger_setup
-from sle_package.utils.tools import (
+from srt.utils.logger import logger_setup
+from srt.utils.tools import (
     pager_command,
     run_command,
     running_spinner_decorator,

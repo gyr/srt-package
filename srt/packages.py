@@ -4,9 +4,9 @@ from rich.console import Console
 from rich.table import Table
 from subprocess import CalledProcessError
 
-from sle_package.users import get_groups, get_users
-from sle_package.utils.logger import logger_setup
-from sle_package.utils.tools import (
+from srt.users import get_groups, get_users
+from srt.utils.logger import logger_setup
+from srt.utils.tools import (
     run_command,
     run_command_and_stream_output,
     running_spinner_decorator,

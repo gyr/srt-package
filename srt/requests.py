@@ -1,8 +1,8 @@
 import argparse
 import datetime
 
-from sle_package.utils.logger import logger_setup
-from sle_package.utils.tools import (
+from srt.utils.logger import logger_setup
+from srt.utils.tools import (
     count_days,
     run_command_and_stream_output,
     running_spinner_decorator,

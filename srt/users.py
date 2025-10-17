@@ -5,8 +5,8 @@ from rich.table import Table
 from subprocess import CalledProcessError
 from typing import Generator
 
-from sle_package.utils.logger import logger_setup
-from sle_package.utils.tools import (
+from srt.utils.logger import logger_setup
+from srt.utils.tools import (
     run_command,
     running_spinner_decorator,
 )

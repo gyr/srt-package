@@ -9,7 +9,7 @@ import argcomplete
 from dotenv import load_dotenv
 from lupa import LuaRuntime  # type: ignore
 
-from sle_package.utils.logger import logger_setup, global_logger_config
+from srt.utils.logger import logger_setup, global_logger_config
 
 # Get the directory of config.lua
 load_dotenv()
@@ -50,9 +50,9 @@ def import_sle_module(name: str) -> None:
     """
     Imports a module
 
-    :param name: Module in the sle_package package.
+    :param name: Module in the srt package.
     """
-    module = importlib.import_module(f".{name}", package="sle_package")
+    module = importlib.import_module(f".{name}", package="srt")
     module.build_parser(SUBPARSERS, config)
 
 
