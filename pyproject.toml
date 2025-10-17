@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "srt"
+version = "0.1.0"
+description = "A release management tool for SUSE."
+dependencies = [
+    "argcomplete",
+    "python-dotenv",
+    "lupa",
+    "rich",
+    "beautifulsoup4",
+    "lxml",
+]
+requires-python = ">=3.6"
+
+[project.scripts]
+srt = "sle_package.cli:main"
