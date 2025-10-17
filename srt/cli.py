@@ -38,11 +38,17 @@ PARSER.add_argument(
     help="The URL of the API from the Open Buildservice instance that should be used.",
     default=config.common.api_url,
 )
+PARSER.add_argument(
+    "--debug",
+    "-d",
+    action="store_true",
+    help="Enable debug logging.",
+)
 SUBPARSERS = PARSER.add_subparsers(
     help="Help for the subprograms that this tool offers."
 )
 
-global_logger_config(verbose=config.common.debug)
+
 log = logger_setup(__name__)
 
 
@@ -62,6 +68,8 @@ def main() -> None:
         import_sle_module(module)
     argcomplete.autocomplete(PARSER)
     args = PARSER.parse_args()
+    global_logger_config(verbose=args.debug or config.common.debug)
+    log.debug(f"{config_dir=}")
     if "func" in vars(args):
         # Run a subprogramm only if the parser detected it correctly.
         try:

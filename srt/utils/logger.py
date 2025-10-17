@@ -13,12 +13,8 @@ def logger_setup(name: str, verbose: bool = False) -> logging.Logger:
     # Use the name directly, don't re-create a new logger.
     logger = logging.getLogger(name)
 
-    # Check if the logger has already been configured.
-    if not logger.hasHandlers():
-        if verbose:
-            logger.setLevel(logging.DEBUG)
-        else:
-            logger.setLevel(logging.WARNING)
+    if verbose:
+        logger.setLevel(logging.DEBUG)
 
     return logger
 
