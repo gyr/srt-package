@@ -20,4 +20,8 @@ requires-python = ">=3.6"
 srt = "srt.cli:main"
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"] # Tell setuptools to look for packages in the src directory
+
+[tool.setuptools]
+# Exclude tests from the package distribution
+package-dir = {"" = "src"}
