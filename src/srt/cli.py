@@ -9,6 +9,7 @@ import argcomplete
 from dotenv import load_dotenv
 from lupa import LuaRuntime  # type: ignore
 
+from srt import __version__
 from srt.utils.logger import logger_setup, global_logger_config
 
 # Get the directory of config.lua
@@ -43,6 +44,11 @@ PARSER.add_argument(
     "-d",
     action="store_true",
     help="Enable debug logging.",
+)
+PARSER.add_argument(
+    "--version",
+    action="version",
+    version=f"%(prog)s {__version__}",
 )
 SUBPARSERS = PARSER.add_subparsers(
     help="Help for the subprograms that this tool offers."

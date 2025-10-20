@@ -4,8 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "srt"
-version = "0.1.0"
+dynamic = ["version"]
+authors = [
+  { name="Gustavo Yokoyama Ribeiro", email="gyr@keemail.me" },
+]
 description = "A release management tool for SUSE."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+keywords = ["suse", "release", "tools"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Development Status :: 3 - Alpha",
+]
+
 dependencies = [
     "argcomplete",
     "python-dotenv",
@@ -14,7 +28,11 @@ dependencies = [
     "beautifulsoup4",
     "lxml",
 ]
-requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/gyr/srt-release-tools"
+Documentation = "https://srt-release-tools.readthedocs.io/"
+"Bug Tracker" = "https://github.com/gyr/srt-release-tools/issues"
 
 [project.scripts]
 srt = "srt.cli:main"
@@ -25,3 +43,6 @@ where = ["src"] # Tell setuptools to look for packages in the src directory
 [tool.setuptools]
 # Exclude tests from the package distribution
 package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "srt.__version__"}
